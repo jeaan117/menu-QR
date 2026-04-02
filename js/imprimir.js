@@ -1,6 +1,6 @@
 // Función para generar el QR automáticamente basado en la URL de Netlify
 function generarQR() {
-    const qrImg = document.getElementById('qr-image');
+const qrImg = document.getElementById('qr-image');
     
     // CAMBIO IMPORTANTE: Usamos tu URL real de Netlify
     const urlMenu = "https://menu-qe.netlify.app/index.html";
