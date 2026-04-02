@@ -3,7 +3,7 @@ function generarQR() {
     const qrImg = document.getElementById('qr-image');
     
     // CAMBIO IMPORTANTE: Usamos tu URL real de Netlify
-    const urlMenu = "https://menu-qe.netlify.app/index.html";
+    const urlMenu = "https://menu-qe.netlify.app/";
     
     // Usamos la API de Google Charts para generar el QR
     qrImg.src = `https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=${encodeURIComponent(urlMenu)}&choe=UTF-8`;
