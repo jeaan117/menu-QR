@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="css/style-admin.css">
-    <title>Document</title>
 </head>
+
 <body>
     <h2>Gestión de Menú</h2>
+    
     <div id="admin-container">Cargando platos...</div>
 
+    <div class="admin-card" style="display: flex; flex-direction: column; text-align: center; margin-top: 30px;">
+        <h3>Código QR del Menú</h3>
+        <p style="font-size: 0.8rem; color: #636e72;">Este es el código que los clientes deben escanear.</p>
+
+        <div id="qr-container" style="padding: 20px; background: white; display: inline-block; border-radius: 10px; margin: 0 auto;">
+            <img id="qr-image" src="" alt="Generando QR..." style="width: 200px; height: 200px; display: none;">
+        </div>
+
+        <button onclick="imprimirQR()" class="status-btn"
+            style="background: #3498db; color: white; margin-top: 15px; width: 100%; cursor: pointer; border: none; border-radius: 10px; padding: 12px; font-weight: bold;">
+            🖨️ Imprimir Código QR
+        </button>
+    </div>
+
     <script src="js/admin.js"></script>
+    <script src="js/imprimir.js"></script>
 </body>
+
 </html>
