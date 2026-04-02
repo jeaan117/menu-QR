@@ -57,20 +57,35 @@ async function actualizarPrecio(id, nuevoPrecio) {
 }
 
 function generarQR() {
-    const qrImg = document.getElementById("qr-image");
-    if (!qrImg) {
-        console.error("No se encontró el elemento qr-image");
+    function generarQR() {
+    const contenedorQR = document.getElementById("qrcode");
+    if (!contenedorQR) return;
+
+    // Limpiamos el contenedor por si ya había algo
+    contenedorQR.innerHTML = "";
+
+    // Creamos el QR
+    new QRCode(contenedorQR, {
+        text: "https://menu-qe.netlify.app/", // Tu URL de Netlify
+        width: 200,
+        height: 200,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H // Nivel de corrección alto para que sea fácil de escanear
+    });
+}
+    }
+function imprimirQR() {
+    // Buscamos el canvas o la imagen que generó la librería
+    const qrCanvas = document.querySelector('#qrcode canvas');
+    if (!qrCanvas) {
+        alert("El QR aún no se ha generado");
         return;
     }
-
-    // CAMBIADO: Tu URL real de Netlify
-    const urlMenu = "https://menu-qe.netlify.app";
-
-    // Construimos la URL de la API de Google
-    const apiUrl = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=" + encodeURIComponent(urlMenu) + "&choe=UTF-8";
-
-    // Aplicamos a la imagen
-    qrImg.src = apiUrl;
+    
+    // Convertimos el contenido del QR a una imagen real para la ventana de impresión
+    const qrSrc = qrCanvas.toDataURL("image/png");
+}
 
     // Forzamos visibilidad
     qrImg.style.display = "block";
