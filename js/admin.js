@@ -64,7 +64,7 @@ function generarQR() {
     }
 
     // CAMBIADO: Tu URL real de Netlify
-    const urlMenu = "https://menu-qe.netlify.app/";
+    const urlMenu = "https://menu-qe.netlify.app";
 
     // Construimos la URL de la API de Google
     const apiUrl = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=" + encodeURIComponent(urlMenu) + "&choe=UTF-8";
