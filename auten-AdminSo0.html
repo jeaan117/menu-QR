@@ -7,6 +7,7 @@
     <title>Panel de Control | Marea Manaba</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" href="css/style-admin.css">
 </head>
 
@@ -20,7 +21,7 @@
         <p style="font-size: 0.8rem; color: #636e72;">Este es el código que los clientes deben escanear.</p>
 
         <div id="qr-container" style="padding: 20px; background: white; display: inline-block; border-radius: 10px; margin: 0 auto;">
-            <img id="qr-image" src="" alt="Generando QR..." style="width: 200px; height: 200px; display: block;">
+            <div id="qrcode"></div>
         </div>
 
         <button onclick="imprimirQR()" class="status-btn"
