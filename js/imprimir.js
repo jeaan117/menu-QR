@@ -47,5 +47,7 @@ function imprimirQR() {
 
 // Llama a generarQR al cargar la página
 window.addEventListener('load', () => {
-    generarQR();
+    if (typeof generarQR === 'function') {
+        generarQR();
+    }
 });
